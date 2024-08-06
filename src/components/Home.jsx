@@ -49,7 +49,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row bg-gray-800 text-white">
+    <div className="flex flex-col lg:flex-row bg-gray-800 text-white mt-20">
       {/* Slider Section */}
       <div className="relative lg:w-2/3 w-full lg:pr-4 lg:pl-2 lg:py-0 lg:mb-0 mb-4 h-60 lg:h-auto">
         <Carousel {...settings}>
