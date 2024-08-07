@@ -1,0 +1,26 @@
+/* Ensure the container is centered and has some margin */
+.portfolio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px auto;
+  }
+  
+  /* Center the projects section and add space between them */
+  .projects-section {
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    margin-bottom: 30px;
+  }
+  
+  /* Center the section titles */
+  .section-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Hide the header (if you want to hide it completely) */
+  .header {
+    display: none;
+  }
+  

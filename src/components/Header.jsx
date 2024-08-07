@@ -8,33 +8,11 @@ import "../style/header.css";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-  const servicesDropdownRef = useRef(null);
   const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  const toggleServicesDropdown = () => {
-    setIsServicesDropdownOpen(!isServicesDropdownOpen);
-  };
-
-  const handleClickOutside = (event) => {
-    if (
-      servicesDropdownRef.current &&
-      !servicesDropdownRef.current.contains(event.target)
-    ) {
-      setIsServicesDropdownOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
 
   useEffect(() => {
     setIsMenuOpen(false);
@@ -116,20 +94,13 @@ const Header = () => {
                   Home
                 </Link>
               </li>
-              <li className="relative">
-                <button
-                  onClick={toggleServicesDropdown}
-                  className="block py-2 pr-4 pl-3 text-black border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 flex items-center"
+              <li>
+                <Link
+                  to="/portfolio"
+                  className="block py-2 pr-4 pl-3 text-black border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"
                 >
-                  Services{" "}
-                  <RiArrowDropDownLine
-                    size={20}
-                    className="ml-1 text-primary-700"
-                  />
-                </button>
-                <ServicesDropdown
-                  isServicesDropdownOpen={isServicesDropdownOpen}
-                />
+                  Portfolio
+                </Link>
               </li>
               <li>
                 <Link
@@ -152,66 +123,6 @@ const Header = () => {
         </div>
       </nav>
     </header>
-  );
-};
-
-const ServicesDropdown = ({ isServicesDropdownOpen }) => {
-  const servicesDropdownRef = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        servicesDropdownRef.current &&
-        !servicesDropdownRef.current.contains(event.target)
-      ) {
-        setIsServicesDropdownOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-  return (
-    <ul
-      ref={servicesDropdownRef}
-      className={`absolute left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg lg:absolute lg:mt-0 lg:ml-0 lg:w-48 lg:top-full dropdown-menu ${
-        isServicesDropdownOpen ? "block" : "hidden"
-      }`}
-    >
-      <li key="ongoing-projects">
-        <a href="#" className="block px-4 py-2 text-black hover:bg-gray-100">
-          On Going Projects
-        </a>
-      </li>
-      <li key="residential-construction">
-        <a href="#" className="block px-4 py-2 text-black hover:bg-gray-100">
-          Residential Construction
-        </a>
-      </li>
-      <li key="commercial-construction">
-        <a href="#" className="block px-4 py-2 text-black hover:bg-gray-100">
-          Commercial Construction
-        </a>
-      </li>
-      <li key="offices">
-        <a href="#" className="block px-4 py-2 text-black hover:bg-gray-100">
-          Offices
-        </a>
-      </li>
-      <li key="land-surveyor">
-        <a href="#" className="block px-4 py-2 text-black hover:bg-gray-100">
-          Land Surveyor
-        </a>
-      </li>
-      <li key="quality-check">
-        <a href="#" className="block px-4 py-2 text-black hover:bg-gray-100">
-          Quality Check
-        </a>
-      </li>
-    </ul>
   );
 };
 

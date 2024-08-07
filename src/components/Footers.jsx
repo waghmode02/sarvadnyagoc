@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Footer,
   FooterCopyright,
@@ -18,8 +19,7 @@ import {
   BsGeoAltFill,
   BsArrowRight,
 } from "react-icons/bs";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Footers = () => {
   return (
@@ -41,20 +41,49 @@ const Footers = () => {
           <FooterLinkGroup col>
             <ul className="space-y-2">
               <li className="flex items-center">
-                <BsArrowRight className="mr-2" />
-                <FooterLink href="#">About Us</FooterLink>
+                <Link
+                  to="/about"
+                  className="flex items-center text-black hover:text-yellow-500 focus:text-yellow-500 transition-colors"
+                >
+                  <BsArrowRight className="mr-2" />
+                  <FooterLink>About Us</FooterLink>
+                </Link>
               </li>
               <li className="flex items-center">
-                <BsArrowRight className="mr-2" />
-                <FooterLink href="#">Contact Us</FooterLink>
+                <Link
+                  to="/portfolio"
+                  className="flex items-center text-black hover:text-yellow-500 focus:text-yellow-500 transition-colors"
+                >
+                  <BsArrowRight className="mr-2" />
+                  <FooterLink>Our Services</FooterLink>
+                </Link>
               </li>
               <li className="flex items-center">
-                <BsArrowRight className="mr-2" />
-                <FooterLink href="#">Terms & Conditions</FooterLink>
+                <Link
+                  to="/contact"
+                  className="flex items-center text-black hover:text-yellow-500 focus:text-yellow-500 transition-colors"
+                >
+                  <BsArrowRight className="mr-2" />
+                  <FooterLink>Contact Us</FooterLink>
+                </Link>
               </li>
               <li className="flex items-center">
-                <BsArrowRight className="mr-2" />
-                <FooterLink href="#">Privacy Policy</FooterLink>
+                <a
+                  href="#"
+                  className="flex items-center text-black hover:text-yellow-500 focus:text-yellow-500 transition-colors"
+                >
+                  <BsArrowRight className="mr-2" />
+                  <FooterLink>Terms & Conditions</FooterLink>
+                </a>
+              </li>
+              <li className="flex items-center">
+                <a
+                  href="#"
+                  className="flex items-center text-black hover:text-yellow-500 focus:text-yellow-500 transition-colors"
+                >
+                  <BsArrowRight className="mr-2" />
+                  <FooterLink>Privacy Policy</FooterLink>
+                </a>
               </li>
             </ul>
           </FooterLinkGroup>
@@ -66,13 +95,19 @@ const Footers = () => {
             1325, SY NO; 103/6 Anand NAGAR, Nanded, Maharashtra 431601
           </p>
           <p>
-            <a href="tel:+919595250999" className="hover:text-green-600 focus:text-green-600 transition-colors">
+            <a
+              href="tel:+919595250999"
+              className="flex items-center text-yellow hover:text-green-600 focus:text-green-600 transition-colors"
+            >
               <BsTelephoneFill className="inline-block mr-2" />
               +91 9595250999
             </a>
           </p>
           <p>
-            <a href="mailto:balajimungal785@gmail.com" className="hover:text-red-600 focus:text-red-600 transition-colors">
+            <a
+              href="mailto:balajimungal785@gmail.com"
+              className="flex items-center text-yellow-600 hover:text-pink-600 focus:text-pink-600 transition-colors"
+            >
               <BsEnvelopeFill className="inline-block mr-2" />
               balajimungal785@gmail.com
             </a>
@@ -105,7 +140,7 @@ const Footers = () => {
         </div>
       </div>
       <FooterDivider />
-      <div className="w-full text-center py-4 shadow-lg">
+      <div className="w-full text-center py-4 ">
         <FooterCopyright
           href="#"
           by="Sarvadnya Group Of Construction, Nanded"

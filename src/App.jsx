@@ -6,7 +6,7 @@ import Footers from "./components/Footers.jsx";
 import AboutUs from "./components/AboutUs.jsx"
 import ContactUs from "./components/ContactUs.jsx"
 import WhatsAppIcon from './components/WhatsAppIcon';
-
+import Portfolio from './components/Portfolio.jsx';
 function App() {
   return (
     <Router>
@@ -15,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Page/>} />
         <Route path="/about" element={<AboutUs/>} />
+        <Route path="/portfolio" element={<Portfolio/>} />
         <Route path="/contact" element={<ContactUs/>} />
       </Routes>
       <Footers />

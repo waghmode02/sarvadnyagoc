@@ -4,7 +4,7 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const WhatsAppIcon = () => {
   const handleClick = () => {
-    const phoneNumber = '919595250999'; // Correct format without '+'
+    const phoneNumber = '919764518999'; // Correct format without '+'
     const message = 'Hi..';
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
