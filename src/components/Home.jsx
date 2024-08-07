@@ -49,7 +49,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row bg-gray-800 text-white mt-20">
+    <div className="flex flex-col lg:flex-row bg-yellow-50 text-white mt-20">
       {/* Slider Section */}
       <div className="relative lg:w-2/3 w-full lg:pr-4 lg:pl-2 lg:py-0 lg:mb-0 mb-4 h-60 lg:h-auto">
         <Carousel {...settings}>
@@ -66,54 +66,65 @@ const Home = () => {
         </Carousel>
       </div>
       {/* Form Section */}
-      <div className="lg:w-1/3 flex flex-col justify-center bg-gray-900 p-6 h-auto">
-        <span className="text-2xl font-bold mb-4 bg-yellow-600 items-center">Talk to Our Expert</span>
-        <form className="space-y-4">
-          <div>
-            <label htmlFor="name" className="block text-lg mb-1">Name</label>
-            <input
-              id="name"
-              type="text"
-              placeholder="Your Name"
-              className="text-black w-full p-3 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500  duration-300"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-lg mb-1">Email</label>
-            <input
-              id="email"
-              type="email"
-              placeholder="Your Email"
-              className="text-black w-full p-3 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 transition-colors duration-300"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="message" className="block text-lg mb-1">Message</label>
-            <textarea
-              id="message"
-              rows="4"
-              placeholder="Your Message"
-              className="text-black w-full p-3 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 transition-colors duration-300"
-              required
-            />
-          </div>
-          <div className="flex items-center mb-4">
-            <input
-              id="tnc"
-              type="checkbox"
-              className="mr-2 text-black"
-              required
-            />
-            <label htmlFor="tnc" className="text-sm">
-              I accept the T&C of Sarvadnya Goc Group Of Companies. I am aware of being contacted by Technical experts of Sarvadnya Group Of Companies listed on the website via Calls, SMS, OR Email regarding services.
-            </label>
-          </div>
-          <button type="submit" className=" w-full py-2 px-4 bg-yellow-600 rounded-lg text-lg hover:bg-blue-700 transition-colors duration-300">
-            Submit
-          </button>
-        </form>
+      <div className="lg:w-1/3 flex flex-col justify-center bg-yellow-50 p-6 h-auto">
+        <span className="text-2xl font-bold mb-4 text-gray-800 items-center mt-2 ml-12">Talk to Our Expert</span>
+        <form className="space-y-6 bg-white p-6 rounded-lg shadow-lg">
+  <div>
+    <label htmlFor="name" className="block text-lg font-semibold text-gray-800 mb-2">Name</label>
+    <input
+      id="name"
+      type="text"
+      placeholder="Your Name"
+      className="text-black w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500 transition-colors duration-300"
+      required
+    />
+  </div>
+  <div>
+    <label htmlFor="email" className="block text-lg font-semibold text-gray-800 mb-2">Email</label>
+    <input
+      id="email"
+      type="email"
+      placeholder="Your Email"
+      className="text-black w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500 transition-colors duration-300"
+      required
+    />
+  </div>
+  <div>
+    <label htmlFor="mobile" className="block text-lg font-semibold text-gray-800 mb-2">Mobile Number</label>
+    <input
+      id="mobile"
+      type="tel"
+      placeholder="Your Mobile Number"
+      className="text-black w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500 transition-colors duration-300"
+      required
+    />
+  </div>
+  <div>
+    <label htmlFor="message" className="block text-lg font-semibold text-gray-800 mb-2">Message</label>
+    <textarea
+      id="message"
+      rows="4"
+      placeholder="Your Message"
+      className="text-black w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500 transition-colors duration-300"
+      required
+    />
+  </div>
+  <div className="flex items-center mb-6">
+    <input
+      id="tnc"
+      type="checkbox"
+      className="mr-2 text-yellow-600"
+      required
+    />
+    <label htmlFor="tnc" className="text-sm text-gray-700">
+      I accept the T&C of Sarvadnya Group Of Construction. I am aware of being contacted by technical experts of Sarvadnya Group Of Construction via calls, SMS, or email regarding services.
+    </label>
+  </div>
+  <button type="submit" className="w-full py-3 px-6 bg-yellow-600 rounded-lg text-white text-lg font-semibold hover:bg-yellow-700 transition-colors duration-300">
+    Submit
+  </button>
+</form>
+
         <div className="mt-6 flex space-x-4">
           <FaInstagram className="text-3xl hover:text-blue-500 transition-colors duration-300" />
           <FaWhatsapp className="text-3xl hover:text-green-500 transition-colors duration-300" />
