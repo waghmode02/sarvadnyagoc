@@ -73,3 +73,39 @@
     width: 100%;
   }
 }
+/* Header background transition */
+header {
+  transition: background-color 0.3s ease;
+}
+
+header:hover {
+  background-color: #f1f5f9; /* Light gray background on hover */
+}
+
+/* Navigation link styles */
+.nav-link {
+  transition: color 0.3s ease, border-bottom 0.3s ease, background-color 0.3s ease;
+}
+
+/* Navigation link hover effect */
+.nav-link:hover {
+  color: #007bff; /* Primary color for text on hover */
+  border-bottom: 2px solid #007bff; /* Blue underline on hover */
+  background-color: rgba(0, 123, 255, 0.1); /* Light blue background on hover */
+}
+
+
+
+/* Phone container hover effect */
+.phone-container a:hover {
+  background-color: #0056b3; /* Darker blue background for hover */
+  color: #ffffff; /* White text color on hover */
+  transition: background-color 0.3s ease;
+}
+
+/* Phone icon hover effect */
+.phone-icon:hover {
+  background-color: #ffcc00; /* Yellow background on hover */
+  transform: scale(1.1); /* Slightly scale up on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}

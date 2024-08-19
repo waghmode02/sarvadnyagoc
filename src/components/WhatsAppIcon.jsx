@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import './WhatsAppIcon.css'; // Import the CSS file
 
 const WhatsAppIcon = () => {
   const handleClick = () => {
@@ -12,9 +13,9 @@ const WhatsAppIcon = () => {
 
   return (
     <div
-      className="fixed bottom-4 left-4 bg-green-500 p-3 rounded-full shadow-lg cursor-pointer hover:bg-green-600 transition-colors duration-300"
+      className="whatsapp-icon fixed bottom-4 left-4 bg-green-500 p-3 rounded-full shadow-lg cursor-pointer hover:bg-green-600 transition-colors duration-300"
       onClick={handleClick}
-      style={{ zIndex: 1000 }} // Ensure the icon is above other elements
+      style={{ zIndex: 1000 }} 
     >
       <FontAwesomeIcon icon={faWhatsapp} className="text-white text-2xl" />
     </div>

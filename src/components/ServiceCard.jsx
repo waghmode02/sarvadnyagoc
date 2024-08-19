@@ -1,8 +1,12 @@
+// ServiceCard.jsx
 import React from 'react';
 
-const ServiceCard = ({ image, title, description }) => {
+const ServiceCard = ({ image, title, description, onClick }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg">
+    <div
+      className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
+      onClick={onClick}
+    >
       <img src={image} alt={title} className="w-full h-56 object-cover" />
       <div className="p-4">
         <h3 className="text-xl font-semibold mb-2">{title}</h3>

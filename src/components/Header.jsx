@@ -1,5 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
-import { RiArrowDropDownLine } from "react-icons/ri";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import img1 from "../assets/img1.png";
@@ -11,7 +10,7 @@ const Header = () => {
   const location = useLocation();
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen(prevState => !prevState);
   };
 
   useEffect(() => {
@@ -88,8 +87,8 @@ const Header = () => {
               <li>
                 <Link
                   to="/"
-                  className="block py-2 pr-4 pl-3 text-black rounded lg:bg-transparent lg:text-black lg:p-0"
-                  aria-current="page"
+                  className="nav-link block py-2 pr-4 pl-3 text-black rounded border-b border-gray-100"
+                 
                 >
                   Home
                 </Link>
@@ -97,7 +96,7 @@ const Header = () => {
               <li>
                 <Link
                   to="/portfolio"
-                  className="block py-2 pr-4 pl-3 text-black border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"
+                  className="nav-link block py-2 pr-4 pl-3 text-black rounded border-b border-gray-100"
                 >
                   Portfolio
                 </Link>
@@ -105,7 +104,7 @@ const Header = () => {
               <li>
                 <Link
                   to="/about"
-                  className="block py-2 pr-4 pl-3 text-black border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"
+                  className="nav-link block py-2 pr-4 pl-3 text-black rounded border-b border-gray-100"
                 >
                   About Us
                 </Link>
@@ -113,7 +112,7 @@ const Header = () => {
               <li>
                 <Link
                   to="/contact"
-                  className="block py-2 pr-4 pl-3 text-black border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"
+                  className="nav-link block py-2 pr-4 pl-3 text-black rounded border-b border-gray-100"
                 >
                   Contact
                 </Link>
