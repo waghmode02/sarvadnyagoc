@@ -15,7 +15,6 @@ function App() {
       <Header />
       <WhatsAppIcon />
       <ScrollToTop />
-      <Chatbot /> 
       <Routes>
         <Route path="/" element={<Page />} />
         <Route path="/about" element={<AboutUs />} />
