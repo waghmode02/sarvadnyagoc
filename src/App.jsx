@@ -8,13 +8,14 @@ import ContactUs from "./components/ContactUs";
 import WhatsAppIcon from './components/WhatsAppIcon';
 import Portfolio from './components/Portfolio';
 import ScrollToTop from './components/ScrollToTop';
-
+import Chatbot from './components/Chatbot'
 function App() {
   return (
     <Router>
       <Header />
       <WhatsAppIcon />
       <ScrollToTop />
+      <Chatbot /> 
       <Routes>
         <Route path="/" element={<Page />} />
         <Route path="/about" element={<AboutUs />} />
