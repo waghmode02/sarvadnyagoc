@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
-import img1 from "../assets/img1.png";
+import img1 from "../assets/Logo3.jpeg";
 import { Link, useLocation } from "react-router-dom";
 import "../style/header.css";
 
@@ -24,11 +24,11 @@ const Header = () => {
           <Link to="/" className="flex items-center header-logo">
             <img
               src={img1}
-              className="mr-3 h-3 sm:h-20"
+              className="mr- h-9 sm:h-20"
               alt="Sarvadnya Goc Logo"
             />
-            <span className="self-center text-sm font-semibold">
-              Sarvadnya Group Of Construction, Nanded
+            <span className="self-center text-xl font-semibold">
+            𝐒𝐚𝐫𝐯𝐚𝐝𝐧𝐲𝐚 𝐆𝐫𝐨𝐮𝐩 𝐎𝐟 𝐂𝐨𝐧𝐬𝐭𝐫𝐮𝐜𝐭𝐢𝐨𝐧, 𝐍𝐚𝐧𝐝𝐞𝐝
             </span>
           </Link>
           <div className="flex items-center lg:order-2 phone-container">
