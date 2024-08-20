@@ -8,12 +8,9 @@ const ContactUs = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
           <h2 className="text-base text-yellow-600 font-semibold tracking-wide uppercase">Talk To Our Expert</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            Enquiry
-          </p>
         </div>
-        <div className="mt-10">
-          <form className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8 border p-6 bg-white shadow-lg rounded-lg transition-all duration-500 hover:shadow-2xl">
+        <div className="mt-10 flex justify-center">
+          <form className="w-full max-w-lg grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8 border p-6 bg-white shadow-lg rounded-lg transition-all duration-500 hover:shadow-2xl">
             <div className="sm:col-span-2">
               <label htmlFor="name" className="block text-sm font-medium text-gray-700">Enter your name</label>
               <input type="text" id="name" className="mt-1 p-2 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md focus:ring-yellow-500 focus:border-yellow-500 transition duration-300" />

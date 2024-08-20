@@ -8,7 +8,7 @@ import {
   FooterLinkGroup,
   FooterTitle,
 } from "flowbite-react";
-import img1 from "../assets/img1.png";
+import img1 from "../assets/balu.jpeg";
 import {
   BsFacebook,
   BsInstagram,
@@ -26,7 +26,7 @@ const Footers = () => {
     <Footer container className="bg-white text-yellow-600 py-10 shadow-lg border-t-2 border-gray-200">
       <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-8 px-8">
         <div className="space-y-4">
-          <img src={img1} alt="Company Logo" className="h-12 sm:h-20" />
+          <img src={img1} alt="Company Logo" className="h-12 sm:h-20 rounded full" />
           <p>We believe that construction is a man-made wonder.</p>
           <p>
             <strong>Sarvadnya Group Of Construction, Nanded</strong>

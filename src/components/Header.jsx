@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
-import img1 from "../assets/Logo3.jpeg";
+import img1 from "../assets/balu.jpeg";
 import { Link, useLocation } from "react-router-dom";
 import "../style/header.css";
 
@@ -24,7 +24,7 @@ const Header = () => {
           <Link to="/" className="flex items-center header-logo">
             <img
               src={img1}
-              className="mr- h-9 sm:h-20"
+              className="mr-4  h-9 sm:h-20 rounded "
               alt="Sarvadnya Goc Logo"
             />
             <span className="self-center text-xl font-semibold">
