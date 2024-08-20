@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { FaInstagram, FaWhatsapp, FaLinkedin, FaPhoneAlt } from 'react-icons/fa';
-import img1 from '../assets/slide1.png';
+import img1 from '../assets/balu1.png';
+import img2 from '../assets/pc1.avif';
+import img3 from '../assets/po1.jpg';
 import '../style/home.css';
 
 const Home = () => {
@@ -19,9 +21,9 @@ const Home = () => {
 
   const images = [
     { src: img1, description: 'Sarvadnya Group Of Construction, Nanded' },
+    { src: img2, description: 'Sarvadnya Group Of Construction, Nanded' },
     { src: img1, description: 'Sarvadnya Group Of Construction, Nanded' },
-    { src: img1, description: 'Sarvadnya Group Of Construction, Nanded' },
-    { src: img1, description: 'Sarvadnya Group Of Construction, Nanded' },
+    { src: img3, description: 'Sarvadnya Group Of Construction, Nanded' },
   ];
 
   const settings = {
