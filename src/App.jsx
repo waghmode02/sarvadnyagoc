@@ -8,7 +8,8 @@ import ContactUs from "./components/ContactUs";
 import WhatsAppIcon from './components/WhatsAppIcon';
 import Portfolio from './components/Portfolio';
 import ScrollToTop from './components/ScrollToTop';
-import Chatbot from './components/Chatbot'
+import Table from './components/Table'; // Import the Table component
+
 function App() {
   return (
     <Router>
@@ -20,6 +21,7 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/admin" element={<Table />} /> {/* Admin route */}
       </Routes>
       <Footers />
     </Router>

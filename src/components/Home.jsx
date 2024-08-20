@@ -17,7 +17,7 @@ const Home = () => {
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-  const [isLoading, setIsLoading] = useState(false); // New loading state
+  const [isLoading, setIsLoading] = useState(false);
 
   const images = [
     { src: img1, description: 'Sarvadnya Group Of Construction, Nanded' },
@@ -72,11 +72,11 @@ const Home = () => {
     e.preventDefault();
     setError('');
     setSuccess('');
-    setIsLoading(true); // Start loading
+    setIsLoading(true);
 
     if (!formData.name || !formData.email || !formData.mobile || !formData.message || !formData.tnc) {
       setError('Please fill in all fields and accept the terms.');
-      setIsLoading(false); // Stop loading on error
+      setIsLoading(false);
       return;
     }
 
@@ -91,18 +91,16 @@ const Home = () => {
           email: formData.email,
           mobile: formData.mobile,
           message: formData.message,
-          acceptTnC: formData.tnc, // Ensure the correct field name
+          acceptTnC: formData.tnc,
         }),
       });
 
       if (!response.ok) {
         const errorText = await response.text();
-        console.error('Response error:', response.status, errorText);
         throw new Error(`Network response was not ok. Status: ${response.status} - ${errorText}`);
       }
 
       const result = await response.json();
-      console.log('Success:', result);
       setSuccess('Your message has been sent successfully!');
       setFormData({
         name: '',
@@ -115,7 +113,7 @@ const Home = () => {
       console.error('Error:', error);
       setError(`There was an error submitting the form: ${error.message}. Please try again later.`);
     } finally {
-      setIsLoading(false); // Stop loading when request completes
+      setIsLoading(false);
     }
   };
 
@@ -133,10 +131,10 @@ const Home = () => {
         </Carousel>
       </div>
       {/* Form Section */}
-      <div className="lg:w-1/3 flex flex-col justify-center bg-white p-6 h-auto ">
+      <div className="lg:w-1/3 flex flex-col justify-center bg-white p-6 h-auto">
         <span className="text-2xl font-bold mb-4 text-gray-800 items-center mt-2 ml-12">Talk to Our Expert</span>
 
-        <form onSubmit={handleSubmit} >
+        <form onSubmit={handleSubmit}>
           <div className="mb-2">
             <label htmlFor="name" className="block text-gray-800 font-medium mb-2">Name</label>
             <input
@@ -192,7 +190,7 @@ const Home = () => {
           <button
             type="submit"
             className="w-full py-3 px-6 bg-yellow-600 rounded-lg text-white text-lg font-semibold hover:bg-yellow-700 transition-colors duration-300"
-            disabled={isLoading} // Disable button while loading
+            disabled={isLoading}
           >
             {isLoading ? (
               <span className="flex items-center justify-center">
