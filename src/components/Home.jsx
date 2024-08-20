@@ -15,6 +15,7 @@ const Home = () => {
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [isLoading, setIsLoading] = useState(false); // New loading state
 
   const images = [
     { src: img1, description: 'Sarvadnya Group Of Construction, Nanded' },
@@ -69,9 +70,11 @@ const Home = () => {
     e.preventDefault();
     setError('');
     setSuccess('');
+    setIsLoading(true); // Start loading
 
     if (!formData.name || !formData.email || !formData.mobile || !formData.message || !formData.tnc) {
       setError('Please fill in all fields and accept the terms.');
+      setIsLoading(false); // Stop loading on error
       return;
     }
 
@@ -109,6 +112,8 @@ const Home = () => {
     } catch (error) {
       console.error('Error:', error);
       setError(`There was an error submitting the form: ${error.message}. Please try again later.`);
+    } finally {
+      setIsLoading(false); // Stop loading when request completes
     }
   };
 
@@ -127,7 +132,7 @@ const Home = () => {
       </div>
       {/* Form Section */}
       <div className="lg:w-1/3 flex flex-col justify-center bg-white p-6 h-auto ">
-      <span className="text-2xl font-bold mb-4 text-gray-800 items-center mt-2 ml-12">Talk to Our Expert</span>
+        <span className="text-2xl font-bold mb-4 text-gray-800 items-center mt-2 ml-12">Talk to Our Expert</span>
 
         <form onSubmit={handleSubmit} >
           <div className="mb-2">
@@ -184,13 +189,38 @@ const Home = () => {
           {success && <p className="text-green-600 mb-4">{success}</p>}
           <button
             type="submit"
-             className="w-full py-3 px-6 bg-yellow-600 rounded-lg text-white text-lg font-semibold hover:bg-yellow-700 transition-colors duration-300"
+            className="w-full py-3 px-6 bg-yellow-600 rounded-lg text-white text-lg font-semibold hover:bg-yellow-700 transition-colors duration-300"
+            disabled={isLoading} // Disable button while loading
           >
-            Send
+            {isLoading ? (
+              <span className="flex items-center justify-center">
+                <svg
+                  className="animate-spin mr-2 h-5 w-5 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v8H4z"
+                  ></path>
+                </svg>
+                Sending...
+              </span>
+            ) : (
+              'Send'
+            )}
           </button>
         </form>
-      
-
       </div>
     </div>
   );
