@@ -52,8 +52,8 @@ const Table = () => {
   }
 
   return (
-    <div className="overflow-x-auto flex justify-center p-4">
-      <table className="min-w-full bg-white border border-gray-300 shadow-md rounded-lg">
+    <div className="overflow-x-auto flex justify-center p-4 mt-20">
+      <table className="min-w-full bg-white border border-gray-300 shadow-md rounded-lg mt-20 p-4">
         <thead className="bg-gray-100">
           <tr>
             <th className="py-2 px-4 border-b text-left">Name</th>
