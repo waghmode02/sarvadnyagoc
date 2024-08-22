@@ -250,7 +250,7 @@ const ContactUs = () => {
     />
     <h2 className="text-lg font-medium text-gray-900 mt-2">Visit Us</h2>
     <p className="text-sm text-gray-600 mt-1">
-      C1, D-102, Sukhsagar, Chandani Chowk, Pune - 411033
+      Anand Nagar Nanded , 431601
     </p>
   </div>
 </div>
