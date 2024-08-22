@@ -55,8 +55,6 @@ const Footers = () => {
                 { to: "/about", label: "About Us" },
                 { to: "/portfolio", label: "Our Services" },
                 { to: "/contact", label: "Contact Us" },
-                { href: "#", label: "Terms & Conditions" },
-                { href: "#", label: "Privacy Policy" },
               ].map(({ to, href, label }) => (
                 <li className="flex items-center" key={label}>
                   {to ? (
@@ -68,13 +66,13 @@ const Footers = () => {
                       <FooterLink>{label}</FooterLink>
                     </Link>
                   ) : (
-                    <a
-                      href={href}
+                    <Link
+                      to={href}
                       className="flex items-center text-black hover:text-yellow-500 focus:text-yellow-500 transition-colors"
                     >
                       <BsArrowRight className="mr-2" />
                       <FooterLink>{label}</FooterLink>
-                    </a>
+                    </Link>
                   )}
                 </li>
               ))}
@@ -113,16 +111,16 @@ const Footers = () => {
         <div className="space-y-4">
           <FooterTitle title="Follow Us" />
           <div className="flex space-x-4">
-            <a href="#" aria-label="Facebook">
+            <a href="https://www.facebook.com/YourPage" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
               <BsFacebook className="text-black hover:text-yellow-600 transition-colors" />
             </a>
-            <a href="#" aria-label="Instagram">
+            <a href="https://www.instagram.com/YourProfile" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
               <BsInstagram className="text-black hover:text-yellow-600 transition-colors" />
             </a>
-            <a href="#" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/YourCompany" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
               <BsLinkedin className="text-black hover:text-yellow-600 transition-colors" />
             </a>
-            <a href="#" aria-label="YouTube">
+            <a href="https://www.youtube.com/channel/YourChannel" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
               <BsYoutube className="text-black hover:text-yellow-600 transition-colors" />
             </a>
           </div>
