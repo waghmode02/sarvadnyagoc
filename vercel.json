@@ -1,15 +1,12 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-  ],
-  "installCommand": "pnpm install"
-}
-{
   "version": 2,
   "builds": [
     {
       "src": "vite.config.ts",
-      "use": "@vercel/static-build"
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
   "routes": [
@@ -17,7 +14,5 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ],
-  "outputDirectory": "dist",
-  "cleanUrls": true
+  ]
 }
