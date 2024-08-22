@@ -24,29 +24,29 @@ const Header = () => {
           <Link to="/" className="flex items-center header-logo">
             <img
               src={img1}
-              className="mr-4  h-9 sm:h-20 rounded "
+              className="h-10 sm:h-20 rounded-full border-2 border-yellow-600 shadow-lg mr-5"
               alt="Sarvadnya Goc Logo"
             />
-            <span className="self-center text-xl font-semibold">
-            𝐒𝐚𝐫𝐯𝐚𝐝𝐧𝐲𝐚 𝐆𝐫𝐨𝐮𝐩 𝐎𝐟 𝐂𝐨𝐧𝐬𝐭𝐫𝐮𝐜𝐭𝐢𝐨𝐧, 𝐍𝐚𝐧𝐝𝐞𝐝
+            <span className="hidden lg:block self-center text-xl font-semibold">
+              𝐒𝐚𝐫𝐯𝐚𝐝𝐧𝐲𝐚 𝐆𝐫𝐨𝐮𝐩 𝐎𝐟 𝐂𝐨𝐧𝐬𝐭𝐫𝐮𝐜𝐭𝐢𝐨𝐧, Nanded
             </span>
           </Link>
           <div className="flex items-center lg:order-2 phone-container">
             <a
               href="tel:+919595250999"
-              className="text-black hover:bg-primary-700 bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+              className="text-black hover:bg-primary-700 bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none transition-colors duration-300"
               id="phone"
             >
               <FontAwesomeIcon
                 icon={faPhone}
                 className="mr-1 bg-yellow-600 text-white p-1 rounded-full phone-icon"
               />
-              <span className="ml-2 text-sm">+91 9595250999</span>
+              <span className="ml-2 text-sm lg:block">+91 9595250999</span>
             </a>
             <button
               onClick={toggleMenu}
               type="button"
-              className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 menu-button"
+              className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 menu-button transition-colors duration-300"
               aria-controls="mobile-menu-2"
               aria-expanded={isMenuOpen}
             >
@@ -84,11 +84,15 @@ const Header = () => {
             id="mobile-menu-2"
           >
             <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+              <li 
+                  className=" sm:hidden nav-link block py-2 pr-4 pl-3 text-black rounded border-b border-gray-100 hover:bg-gray-100 transition-colors duration-300"
+              >
+              𝐒𝐚𝐫𝐯𝐚𝐝𝐧𝐲𝐚 𝐆𝐫𝐨𝐮𝐩 𝐎𝐟 𝐂𝐨𝐧𝐬𝐭𝐫𝐮𝐜𝐭𝐢𝐨𝐧, Nanded
+              </li>
               <li>
                 <Link
                   to="/"
-                  className="nav-link block py-2 pr-4 pl-3 text-black rounded border-b border-gray-100"
-                 
+                  className="nav-link block py-2 pr-4 pl-3 text-black rounded border-b border-gray-100 hover:bg-gray-100 transition-colors duration-300"
                 >
                   Home
                 </Link>
@@ -96,7 +100,7 @@ const Header = () => {
               <li>
                 <Link
                   to="/portfolio"
-                  className="nav-link block py-2 pr-4 pl-3 text-black rounded border-b border-gray-100"
+                  className="nav-link block py-2 pr-4 pl-3 text-black rounded border-b border-gray-100 hover:bg-gray-100 transition-colors duration-300"
                 >
                   Portfolio
                 </Link>
@@ -104,7 +108,7 @@ const Header = () => {
               <li>
                 <Link
                   to="/about"
-                  className="nav-link block py-2 pr-4 pl-3 text-black rounded border-b border-gray-100"
+                  className="nav-link block py-2 pr-4 pl-3 text-black rounded border-b border-gray-100 hover:bg-gray-100 transition-colors duration-300"
                 >
                   About Us
                 </Link>
@@ -112,7 +116,7 @@ const Header = () => {
               <li>
                 <Link
                   to="/contact"
-                  className="nav-link block py-2 pr-4 pl-3 text-black rounded border-b border-gray-100"
+                  className="nav-link block py-2 pr-4 pl-3 text-black rounded border-b border-gray-100 hover:bg-gray-100 transition-colors duration-300"
                 >
                   Contact
                 </Link>

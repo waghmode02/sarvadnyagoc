@@ -23,87 +23,82 @@ import { Link } from "react-router-dom";
 
 const Footers = () => {
   return (
-    <Footer container className="bg-white text-yellow-600 py-10 shadow-lg border-t-2 border-gray-200">
-      <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-8 px-8">
-        <div className="space-y-4">
-          <img src={img1} alt="Company Logo" className="h-12 sm:h-20 rounded full" />
-          <p>We believe that construction is a man-made wonder.</p>
-          <p>
-            <strong>Sarvadnya Group Of Construction, Nanded</strong>
-          </p>
-          <p>
-            Rated <span className="text-yellow-400">4.7/5</span> based on 3832
-            customer ratings
-          </p>
+    <Footer container className="bg-white text-yellow-600 py-6 md:py-10 shadow-lg border-t-2 border-gray-200">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 px-4 md:px-8">
+  
+        <div className="flex flex-col items-center md:items-start space-y-4">
+          <img
+            src={img1}
+            alt="Company Logo"
+            className="h-12 sm:h-16 md:h-20 rounded-full border-2 border-yellow-600 shadow-lg"
+          />
+          <div className="text-center md:text-left space-y-2">
+            <p className="text-xs sm:text-sm md:text-base">
+              We believe that construction is a man-made wonder.
+            </p>
+            <p>
+              <strong>Sarvadnya Group Of Construction, Nanded</strong>
+            </p>
+            <p className="text-xs sm:text-sm md:text-base">
+              Rated <span className="text-yellow-400">4.7/5</span> based on 3832
+              customer ratings
+            </p>
+          </div>
         </div>
+        
+        {/* Services Section */}
         <div className="space-y-4">
           <FooterTitle title="Our Services" />
           <FooterLinkGroup col>
-            <ul className="space-y-2">
-              <li className="flex items-center">
-                <Link
-                  to="/about"
-                  className="flex items-center text-black hover:text-yellow-500 focus:text-yellow-500 transition-colors"
-                >
-                  <BsArrowRight className="mr-2" />
-                  <FooterLink>About Us</FooterLink>
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <Link
-                  to="/portfolio"
-                  className="flex items-center text-black hover:text-yellow-500 focus:text-yellow-500 transition-colors"
-                >
-                  <BsArrowRight className="mr-2" />
-                  <FooterLink>Our Services</FooterLink>
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <Link
-                  to="/contact"
-                  className="flex items-center text-black hover:text-yellow-500 focus:text-yellow-500 transition-colors"
-                >
-                  <BsArrowRight className="mr-2" />
-                  <FooterLink>Contact Us</FooterLink>
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <a
-                  href="#"
-                  className="flex items-center text-black hover:text-yellow-500 focus:text-yellow-500 transition-colors"
-                >
-                  <BsArrowRight className="mr-2" />
-                  <FooterLink>Terms & Conditions</FooterLink>
-                </a>
-              </li>
-              <li className="flex items-center">
-                <a
-                  href="#"
-                  className="flex items-center text-black hover:text-yellow-500 focus:text-yellow-500 transition-colors"
-                >
-                  <BsArrowRight className="mr-2" />
-                  <FooterLink>Privacy Policy</FooterLink>
-                </a>
-              </li>
+            <ul className="space-y-2 text-sm sm:text-base">
+              {[
+                { to: "/about", label: "About Us" },
+                { to: "/portfolio", label: "Our Services" },
+                { to: "/contact", label: "Contact Us" },
+                { href: "#", label: "Terms & Conditions" },
+                { href: "#", label: "Privacy Policy" },
+              ].map(({ to, href, label }) => (
+                <li className="flex items-center" key={label}>
+                  {to ? (
+                    <Link
+                      to={to}
+                      className="flex items-center text-black hover:text-yellow-500 focus:text-yellow-500 transition-colors"
+                    >
+                      <BsArrowRight className="mr-2" />
+                      <FooterLink>{label}</FooterLink>
+                    </Link>
+                  ) : (
+                    <a
+                      href={href}
+                      className="flex items-center text-black hover:text-yellow-500 focus:text-yellow-500 transition-colors"
+                    >
+                      <BsArrowRight className="mr-2" />
+                      <FooterLink>{label}</FooterLink>
+                    </a>
+                  )}
+                </li>
+              ))}
             </ul>
           </FooterLinkGroup>
         </div>
+
+        {/* Contact Info Section */}
         <div className="space-y-4">
           <FooterTitle title="Contact Info" />
-          <p>
-            <BsGeoAltFill className="inline-block mr-2" />
+          <p className="flex items-center text-sm sm:text-base">
+            <BsGeoAltFill className="inline-block mr-2 text-yellow-600" />
             1325, SY NO; 103/6 Anand NAGAR, Nanded, Maharashtra 431601
           </p>
-          <p>
+          <p className="flex items-center text-sm sm:text-base">
             <a
               href="tel:+919595250999"
-              className="flex items-center text-yellow hover:text-green-600 focus:text-green-600 transition-colors"
+              className="flex items-center text-yellow-600 hover:text-green-600 focus:text-green-600 transition-colors"
             >
               <BsTelephoneFill className="inline-block mr-2" />
               +91 9595250999
             </a>
           </p>
-          <p>
+          <p className="flex items-center text-sm sm:text-base">
             <a
               href="mailto:balajimungal785@gmail.com"
               className="flex items-center text-yellow-600 hover:text-pink-600 focus:text-pink-600 transition-colors"
@@ -113,39 +108,34 @@ const Footers = () => {
             </a>
           </p>
         </div>
+
+        {/* Social Media Section */}
         <div className="space-y-4">
           <FooterTitle title="Follow Us" />
-          <div className="flex space-x-4">
-            <FooterIcon
-              href="#"
-              icon={BsFacebook}
-              className="hover:text-blue-600 focus:text-blue-600 hover:scale-110 focus:scale-110 transition-transform"
-            />
-            <FooterIcon
-              href="#"
-              icon={BsInstagram}
-              className="hover:text-pink-600 focus:text-pink-600 hover:scale-110 focus:scale-110 transition-transform"
-            />
-            <FooterIcon
-              href="#"
-              icon={BsLinkedin}
-              className="hover:text-blue-500 focus:text-blue-500 hover:scale-110 focus:scale-110 transition-transform"
-            />
-            <FooterIcon
-              href="#"
-              icon={BsYoutube}
-              className="hover:text-red-600 focus:text-red-600 hover:scale-110 focus:scale-110 transition-transform"
-            />
+          <div className="flex flex-wrap gap-6 justify-center md:justify-start">
+            {[
+              { href: "#", icon: BsFacebook, color: "text-blue-600" },
+              { href: "#", icon: BsInstagram, color: "text-pink-600" },
+              { href: "#", icon: BsLinkedin, color: "text-blue-500" },
+              { href: "#", icon: BsYoutube, color: "text-red-600" },
+            ].map(({ href, icon: Icon, color }) => (
+              <FooterIcon
+                href={href}
+                icon={Icon}
+                key={href}
+                className={`hover:${color} focus:${color} hover:scale-110 focus:scale-110 transition-transform text-3xl md:text-2xl`}
+              />
+            ))}
           </div>
         </div>
       </div>
       <FooterDivider />
-      <div className="w-full text-center py-4 ">
+      <div className="w-full text-center py-4">
         <FooterCopyright
           href="#"
           by="Sarvadnya Group Of Construction, Nanded"
           year={2024}
-          className="text-gray-500"
+          className="text-gray-500 text-xs sm:text-sm"
         />
       </div>
     </Footer>

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { FaInstagram, FaWhatsapp, FaLinkedin, FaPhoneAlt } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
 import img1 from '../assets/balu1.png';
 import img2 from '../assets/pc1.avif';
 import img3 from '../assets/po1.jpg';
+import img4 from '../assets/a5.png';
 import '../style/home.css';
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const images = [
     { src: img1, description: 'Sarvadnya Group Of Construction, Nanded' },
@@ -73,14 +75,32 @@ const Home = () => {
     setError('');
     setSuccess('');
     setIsLoading(true);
-
+  
+    // Define the regex patterns
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^\+?[1-9]\d{1,14}$/;
+  
+    // Validate form fields
     if (!formData.name || !formData.email || !formData.mobile || !formData.message || !formData.tnc) {
       setError('Please fill in all fields and accept the terms.');
       setIsLoading(false);
       return;
     }
-
+  
+    if (!emailRegex.test(formData.email)) {
+      setError('Please enter a valid email address.');
+      setIsLoading(false);
+      return;
+    }
+  
+    if (!phoneRegex.test(formData.mobile)) {
+      setError('Please enter a valid phone number.');
+      setIsLoading(false);
+      return;
+    }
+  
     try {
+      // Send data to the backend
       const response = await fetch('https://sarvadnyagoc-backend.onrender.com/api/addcontact', {
         method: 'POST',
         headers: {
@@ -94,14 +114,24 @@ const Home = () => {
           acceptTnC: formData.tnc,
         }),
       });
-
+  
       if (!response.ok) {
         const errorText = await response.text();
         throw new Error(`Network response was not ok. Status: ${response.status} - ${errorText}`);
       }
-
-      const result = await response.json();
-      setSuccess('Your message has been sent successfully!');
+  
+      // Send email using EmailJS
+      await emailjs.send('service_30r7j7q', 'template_zhdv0wq', {
+        name: formData.name,
+        email: formData.email,
+        mobile: formData.mobile,
+        message: formData.message,
+      }, 'icEnC8EKfVVeSyDmG');
+  
+      // Show success popup
+      setShowPopup(true);
+  
+      // Reset form and show success message
       setFormData({
         name: '',
         email: '',
@@ -115,6 +145,11 @@ const Home = () => {
     } finally {
       setIsLoading(false);
     }
+  };
+  
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
   };
 
   return (
@@ -175,7 +210,7 @@ const Home = () => {
               className="text-black w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500 transition-colors duration-300"
             />
           </div>
-          <div className="mb-2 flex items-center">
+          <div className="mb-4 flex items-center">
             <input
               type="checkbox"
               id="tnc"
@@ -183,17 +218,12 @@ const Home = () => {
               onChange={handleChange}
               className="mr-2"
             />
-            <label htmlFor="tnc" className="text-gray-800">I accept the terms and conditions</label>
+            <label htmlFor="tnc" className="text-gray-800">I accept the <a href="#terms" className="text-yellow-500 underline">Terms and Conditions</a></label>
           </div>
-          {error && <p className="text-red-600 mb-4">{error}</p>}
-          {success && <p className="text-green-600 mb-4">{success}</p>}
-          <button
-            type="submit"
-            className="w-full py-3 px-6 bg-yellow-600 rounded-lg text-white text-lg font-semibold hover:bg-yellow-700 transition-colors duration-300"
-            disabled={isLoading}
-          >
-            {isLoading ? (
-              <span className="flex items-center justify-center">
+          {error && <p className="text-red-500 mb-4">{error}</p>}
+          {isLoading ? (
+            <button type="submit" className="bg-yellow-500 text-white p-3 rounded-lg cursor-not-allowed" disabled>
+               <span className="flex items-center justify-center">
                 <svg
                   className="animate-spin mr-2 h-5 w-5 text-white"
                   xmlns="http://www.w3.org/2000/svg"
@@ -216,11 +246,29 @@ const Home = () => {
                 </svg>
                 Sending...
               </span>
-            ) : (
-              'Send'
-            )}
-          </button>
+            </button>
+          ) : (
+            <button type="submit" className="bg-yellow-500 text-white p-3 rounded-lg hover:bg-yellow-600 transition-colors duration-300">
+              Send
+            </button>
+          )}
         </form>
+        {showPopup && (
+          <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75 z-50">
+            <div className="bg-white p-6 rounded-lg text-center">
+            <img src={img4} className='h-10 mx-auto mt-0' alt='Description of image' />
+              <h2 className="text-xl font-semibold mb-4 text-gray-800">Thank You!</h2>
+              <p className="text-gray-600 mb-4">Your message has been sent successfully.</p>
+              <button
+                type="button"
+                onClick={handleClosePopup}
+                className="bg-green-500 text-white p-2 rounded-lg hover:bg-green-800 transition-colors duration-300"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

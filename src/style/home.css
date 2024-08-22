@@ -73,3 +73,40 @@ form textarea:focus {
   }
 }
 
+.popup-error,
+.popup-success {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f8d7da; /* Error background color */
+  color: #721c24; /* Error text color */
+  z-index: 1000;
+}
+
+.popup-success {
+  background-color: #d4edda; /* Success background color */
+  color: #155724; /* Success text color */
+}
+
+.success-animation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.success-animation svg {
+  animation: tick-animation 1s ease-in-out;
+}
+
+@keyframes tick-animation {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}

@@ -22,7 +22,7 @@ const HowItWorks = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <div className="mt-24 p-4 text-center bg-white mt-0">
+    <div className="p-4 text-center bg-white mb-0 mt-5">
       <h2 className="text-3xl font-bold mb-6">How It Works</h2>
       <p className="text-gray-600 mb-12">
         Our house construction steps are simple and easy to understand: Dream House building experience cumulated in 5 simple steps

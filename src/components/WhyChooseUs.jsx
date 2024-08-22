@@ -12,8 +12,8 @@ const stats = [
 
 const WhyChooseUs = () => {
   return (
-    <div className="mt-24 p-4">
-      <h2 className="text-3xl font-bold mb-6 text-center">Why Choose Us</h2>
+    <div className="mt-0 p-4">
+      <h2 className="text-3xl font-bold  text-center">Why Choose Us</h2>
       <div className="flex flex-col lg:flex-row items-center">
         <img src={houseImage} alt="House" className="w-full lg:w-1/2 mb-8 lg:mb-0" />
         <div className="lg:ml-8 lg:w-1/2">
