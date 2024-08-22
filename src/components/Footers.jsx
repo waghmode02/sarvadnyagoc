@@ -1,12 +1,9 @@
 import React from "react";
 import {
   Footer,
-  FooterCopyright,
-  FooterDivider,
-  FooterIcon,
-  FooterLink,
-  FooterLinkGroup,
   FooterTitle,
+  FooterLinkGroup,
+  FooterLink,
 } from "flowbite-react";
 import img1 from "../assets/balu.jpeg";
 import {
@@ -23,9 +20,12 @@ import { Link } from "react-router-dom";
 
 const Footers = () => {
   return (
-    <Footer container className="bg-white text-yellow-600 py-6 md:py-10 shadow-lg border-t-2 border-gray-200">
+    <Footer
+      container
+      className="bg-white text-yellow-600 py-6 md:py-10 shadow-lg border-t-2 border-gray-200"
+    >
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 px-4 md:px-8">
-  
+        {/* Company Info Section */}
         <div className="flex flex-col items-center md:items-start space-y-4">
           <img
             src={img1}
@@ -45,7 +45,7 @@ const Footers = () => {
             </p>
           </div>
         </div>
-        
+
         {/* Services Section */}
         <div className="space-y-4">
           <FooterTitle title="Our Services" />
@@ -109,34 +109,24 @@ const Footers = () => {
           </p>
         </div>
 
-        {/* Social Media Section */}
+        {/* Social Media Links Section */}
         <div className="space-y-4">
           <FooterTitle title="Follow Us" />
-          <div className="flex flex-wrap gap-6 justify-center md:justify-start">
-            {[
-              { href: "#", icon: BsFacebook, color: "text-blue-600" },
-              { href: "#", icon: BsInstagram, color: "text-pink-600" },
-              { href: "#", icon: BsLinkedin, color: "text-blue-500" },
-              { href: "#", icon: BsYoutube, color: "text-red-600" },
-            ].map(({ href, icon: Icon, color }) => (
-              <FooterIcon
-                href={href}
-                icon={Icon}
-                key={href}
-                className={`hover:${color} focus:${color} hover:scale-110 focus:scale-110 transition-transform text-3xl md:text-2xl`}
-              />
-            ))}
+          <div className="flex space-x-4">
+            <a href="#" aria-label="Facebook">
+              <BsFacebook className="text-black hover:text-yellow-600 transition-colors" />
+            </a>
+            <a href="#" aria-label="Instagram">
+              <BsInstagram className="text-black hover:text-yellow-600 transition-colors" />
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <BsLinkedin className="text-black hover:text-yellow-600 transition-colors" />
+            </a>
+            <a href="#" aria-label="YouTube">
+              <BsYoutube className="text-black hover:text-yellow-600 transition-colors" />
+            </a>
           </div>
         </div>
-      </div>
-      <FooterDivider />
-      <div className="w-full text-center py-4">
-        <FooterCopyright
-          href="#"
-          by="Sarvadnya Group Of Construction, Nanded"
-          year={2024}
-          className="text-gray-500 text-xs sm:text-sm"
-        />
       </div>
     </Footer>
   );
