@@ -238,7 +238,7 @@ const ContactUs = () => {
       />
       <h2 className="text-lg font-medium text-gray-900 mt-2">Email Us</h2>
       <p className="text-sm text-gray-600 mt-1 group-hover:text-yellow-600">
-        support@sarvadnyagoc.in
+      balajimungal785@gmail.com
       </p>
     </a>
   </div>

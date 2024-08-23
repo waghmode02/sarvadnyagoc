@@ -55,8 +55,8 @@ const Footers = () => {
                 { to: "/about", label: "About Us" },
                 { to: "/portfolio", label: "Our Services" },
                 { to: "/contact", label: "Contact Us" },
-                { href: "#", label: "Terms & Conditions" },
-                { href: "#", label: "Privacy Policy" },
+                { to: "/", label: "Terms & Conditions" },
+                { to: "/", label: "Privacy Policy" },
               ].map(({ to, href, label }) => (
                 <li className="flex items-center" key={label}>
                   {to ? (
@@ -113,18 +113,16 @@ const Footers = () => {
         <div className="space-y-4">
           <FooterTitle title="Follow Us" />
           <div className="flex space-x-4">
-            <a href="#" aria-label="Facebook">
+            <a href="https://www.linkedin.com/in/nagesh02/" aria-label="Facebook">
               <BsFacebook className="text-black hover:text-yellow-600 transition-colors" />
             </a>
-            <a href="#" aria-label="Instagram">
+            <a href="https://www.linkedin.com/in/nagesh02/" aria-label="Instagram">
               <BsInstagram className="text-black hover:text-yellow-600 transition-colors" />
             </a>
-            <a href="#" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/nagesh02/" aria-label="LinkedIn">
               <BsLinkedin className="text-black hover:text-yellow-600 transition-colors" />
             </a>
-            <a href="#" aria-label="YouTube">
-              <BsYoutube className="text-black hover:text-yellow-600 transition-colors" />
-            </a>
+            
           </div>
         </div>
       </div>
